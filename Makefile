@@ -1,11 +1,8 @@
-# make test   -> compila y corre las pruebas del Virtual Tree (C++)
 # make bench  -> mide tiempos (k fijo / n variable y n fijo / k variable)
 # make trace  -> ejecuta el Virtual Tree real y escribe manim/trace.json
 # make video  -> renderiza el video (1080p60) con Manim
 CXX = g++ -std=c++17 -O2 -Wall
-.PHONY: test bench trace video clean
-test:
-	cd cpp && $(CXX) tests.cpp -o tests && ./tests
+.PHONY: bench trace video clean
 bench:
 	cd cpp && $(CXX) bench.cpp -o bench && ./bench | tee bench_result.csv
 trace:
@@ -13,5 +10,5 @@ trace:
 video: trace
 	cd manim && manim -qh virtual_tree_scene.py VirtualTreeVideo
 clean:
-	rm -f cpp/tests cpp/trace_gen cpp/bench
+	rm -f cpp/trace_gen cpp/bench
 	rm -rf manim/media

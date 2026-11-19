@@ -13,8 +13,7 @@ necesarios (a lo sumo `2k − 1` nodos), sin importar el tamaño `n` del árbol 
 ## Estructura del repositorio
 ```
 cpp/virtual_tree.hpp     implementación propia (sin librerías de terceros)
-cpp/tests.cpp            pruebas contra fuerza bruta
-cpp/bench.cpp            medición empírica de tiempos
+cpp/bench.cpp            mide tiempos y genera cpp/bench_result.csv (gráfico de costo del video)
 cpp/trace_gen.cpp        ejecuta la implementación y genera manim/trace.json
 manim/virtual_tree_scene.py   escena que SOLO lee la traza y la dibuja
 requirements.txt         dependencias de Python
@@ -50,8 +49,7 @@ auditarlo: `VT_CAPTION_LOG=subtitulos.json make video` guarda cada subtítulo co
 
 ## Compilar y ejecutar
 ```bash
-make test     # 3000 casos aleatorios x 2 variantes + consulta vacía + cadena de 10^6 nodos
-make bench    # tiempos por consulta (escribe cpp/bench_result.csv)
+make bench    # tiempos por consulta (escribe cpp/bench_result.csv, usado por el video)
 make trace    # genera manim/trace.json desde C++
 make video    # renderiza manim/media/videos/virtual_tree_scene/1080p60/VirtualTreeVideo.mp4
 ```
@@ -61,8 +59,7 @@ En Windows se recomienda usar WSL (Ubuntu) y seguir los pasos anteriores. Si se 
 `g++` (MSYS2/MinGW) y Manim instalados directamente en Windows, los mismos pasos son:
 ```bash
 cd cpp
-g++ -std=c++17 -O2 tests.cpp -o tests && ./tests              # pruebas
-g++ -std=c++17 -O2 bench.cpp -o bench && ./bench               # mediciones
+g++ -std=c++17 -O2 bench.cpp -o bench && ./bench > bench_result.csv   # mediciones
 g++ -std=c++17 -O2 trace_gen.cpp -o trace_gen
 ./trace_gen > ../manim/trace.json                             # traza real
 cd ../manim

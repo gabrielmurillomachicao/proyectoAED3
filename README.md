@@ -6,9 +6,6 @@ Video educativo (estilo Manim) sobre el **Virtual Tree**: dado un árbol enraiza
 un subconjunto de `k` nodos, construye el árbol comprimido con esos nodos y los LCA
 necesarios (a lo sumo `2k − 1` nodos), sin importar el tamaño `n` del árbol original.
 
-- **Video final:** [`video/VirtualTreeVideo.mp4`](video/VirtualTreeVideo.mp4) (1080p60, 4 min 50 s, sin narración)
-- **Informe:** [`informe/informe.pdf`](informe/informe.pdf)
-
 ## Integrantes
 - Gabriel Murillo Machicao
 - Juan Pablo Saavedra Ruiz
@@ -20,9 +17,6 @@ cpp/tests.cpp            pruebas contra fuerza bruta
 cpp/bench.cpp            medición empírica de tiempos
 cpp/trace_gen.cpp        ejecuta la implementación y genera manim/trace.json
 manim/virtual_tree_scene.py   escena que SOLO lee la traza y la dibuja
-informe/informe.tex      informe (LaTeX) + figuras extraídas del video
-informe/informe.pdf      informe compilado
-video/VirtualTreeVideo.mp4    video final renderizado
 requirements.txt         dependencias de Python
 ```
 
@@ -60,7 +54,6 @@ make test     # 3000 casos aleatorios x 2 variantes + consulta vacía + cadena d
 make bench    # tiempos por consulta (escribe cpp/bench_result.csv)
 make trace    # genera manim/trace.json desde C++
 make video    # renderiza manim/media/videos/virtual_tree_scene/1080p60/VirtualTreeVideo.mp4
-make informe  # compila informe/informe.pdf
 ```
 
 ### Sin `make` (por ejemplo, en Windows)

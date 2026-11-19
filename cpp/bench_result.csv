@@ -1,0 +1,14 @@
+# Experimento 1: k = 100, n variable
+n,us_build_virtual,us_recorrido_completo
+1000,17.53,0.63
+10000,17.73,6.89
+100000,21.23,151.60
+1000000,35.10,1563.74
+
+# Experimento 2: n = 1000000, k variable
+k,us_build_virtual,us_build_virtual_sorted,nodos_promedio
+10,3.16,2.06,15.7
+100,34.34,12.37,164.2
+1000,398.57,99.41,1634.1
+10000,3858.54,889.32,15959.0
+100000,46108.67,8099.93,137966.3
